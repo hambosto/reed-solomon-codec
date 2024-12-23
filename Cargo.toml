@@ -1,0 +1,18 @@
+[package]
+name = "encoder-solomon"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+byteorder = "1.5.0"
+reed-solomon-erasure = "6.0.0"
+thiserror = "2.0.9"
+
+[profile.release]
+opt-level = "z"
+debug = false
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+incremental = false
